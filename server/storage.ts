@@ -72,6 +72,8 @@ export class MemStorage implements IStorage {
       startDate: new Date(insertCampaign.startDate),
       endDate: new Date(insertCampaign.endDate),
       targetAudience: insertCampaign.targetAudience || [],
+      status: insertCampaign.status || "draft",
+      progress: insertCampaign.progress || 0,
       createdAt: now,
       updatedAt: now,
     };
@@ -112,6 +114,9 @@ export class MemStorage implements IStorage {
     const auditLog: AuditLog = {
       ...insertAuditLog,
       id,
+      resourceId: insertAuditLog.resourceId || null,
+      changes: insertAuditLog.changes || null,
+      ipAddress: insertAuditLog.ipAddress || null,
       timestamp: new Date(),
     };
     this.auditLogs.set(id, auditLog);
