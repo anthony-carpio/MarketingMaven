@@ -1,5 +1,6 @@
-import { Bell, Plus } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import NotificationsDropdown from "./notifications-dropdown";
 
 interface HeaderProps {
   title: string;
@@ -22,10 +23,7 @@ export default function Header({
           <p className="text-sm text-gray-500 mt-1">{subtitle}</p>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="relative p-2 text-gray-400 hover:text-gray-600 transition-colors">
-            <Bell size={20} />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-          </button>
+          <NotificationsDropdown />
           {showCreateButton && (
             <Button 
               onClick={onCreateCampaign}
