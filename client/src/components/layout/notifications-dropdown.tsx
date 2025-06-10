@@ -200,6 +200,7 @@ export default function NotificationsDropdown() {
               variant="ghost" 
               size="sm" 
               className="w-full text-center text-sm text-gray-600 hover:text-gray-900"
+              onClick={() => window.location.href = '/notifications'}
             >
               View all notifications
             </Button>
